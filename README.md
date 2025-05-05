@@ -16,10 +16,13 @@ FDA Oncology Copilot is a specialized application that uses Retrieval-Augmented 
 ```mermaid
 graph TD
     A[User Interface] --> B[Task Layer]
-    B --> C[Vector Store]
-    B --> D[Language Model]
-    C --> E[Embedding Model]
     F[Prompt Templates] --> B
+    B --> C[Vector Store]
+    C --> E[Embedding Model]
+    B --> D[Language Model]
+    D --> G[Output: Summary]
+    G --> A
+
 ```
 
 ### Technical Highlights
