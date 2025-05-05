@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FDA Oncology Copilot</title>
+    
+    <!-- Office JavaScript API -->
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="app.css">
+    
+    <!-- Custom scripts -->
+    <script src="app.js"></script>
+</head>
+
+<body class="ms-font-m ms-Fabric">
+    <div id="app">
+        <header class="ms-bgColor-themePrimary ms-fontColor-white">
+            <div class="header-content">
+                <h1 class="ms-font-xl ms-fontWeight-semibold">FDA Oncology Copilot</h1>
+                <a href="help.html" class="ms-fontColor-white" target="_blank">Help</a>
+            </div>
+        </header>
+        
+        <main class="ms-Grid" dir="ltr">
+            <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-sm12">
+                    <div id="dataSourceSection" class="section">
+                        <h2 class="ms-font-l">Data Source</h2>
+                        <select id="dataSource" class="ms-TextField-field"></select>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">Filters</h2>
+                        <div class="ms-Grid-row">
+                            <div class="ms-Grid-col ms-sm12">
+                                <label class="ms-Label">Disease Type:</label>
+                                <select id="diseaseType" class="ms-TextField-field"></select>
+                            </div>
+                        </div>
+                        <div class="ms-Grid-row">
+                            <div class="ms-Grid-col ms-sm12">
+                                <label class="ms-Label">Trial Phase:</label>
+                                <select id="trialPhase" class="ms-TextField-field"></select>
+                            </div>
+                        </div>
+                        <div class="ms-Grid-row">
+                            <div class="ms-Grid-col ms-sm12">
+                                <label class="ms-Label">Document Section:</label>
+                                <select id="documentSection" class="ms-TextField-field"></select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <div class="ms-Grid-row">
+                            <div class="ms-Grid-col ms-sm12">
+                                <button id="summarizeBtn" class="ms-Button ms-Button--primary">
+                                    <span class="ms-Button-label">Summarize Selected Text</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">Or Upload a Document</h2>
+                        <div class="ms-Grid-row">
+                            <div class="ms-Grid-col ms-sm12">
+                                <input type="file" id="fileUpload" class="ms-TextField-field" />
+                                <div id="supportedFormats" class="ms-font-xs">
+                                    <p>Supported formats: Loading...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ms-Grid-row">
+                            <div class="ms-Grid-col ms-sm12">
+                                <button id="uploadBtn" class="ms-Button">
+                                    <span class="ms-Button-label">Upload and Process</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="loading" class="hidden">
+                        <div class="ms-Spinner ms-Spinner--large"></div>
+                        <p>Generating summary...</p>
+                    </div>
+                    
+                    <div id="results" class="hidden">
+                        <div class="section">
+                            <h2 class="ms-font-l">Summary</h2>
+                            <div id="summary" class="result-box"></div>
+                            
+                            <button id="insertBtn" class="ms-Button ms-Button--primary">
+                                <span class="ms-Button-label">Insert Summary into Document</span>
+                            </button>
+                        </div>
+                        
+                        <div class="section">
+                            <h2 class="ms-font-l">References</h2>
+                            <div id="references"></div>
+                        </div>
+                        
+                        <div id="validation" class="warning hidden">
+                            <p id="validationMessage"></p>
+                        </div>
+                    </div>
+                    
+                    <div id="error" class="error hidden">
+                        <p id="errorMessage"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

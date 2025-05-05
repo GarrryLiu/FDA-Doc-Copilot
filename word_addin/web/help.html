@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FDA Oncology Copilot - Help</title>
+    
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui -->
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css"/>
+    
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body class="ms-font-m ms-Fabric">
+    <div id="app">
+        <header class="ms-bgColor-themePrimary ms-fontColor-white">
+            <h1 class="ms-font-xl ms-fontWeight-semibold">FDA Oncology Copilot - Help</h1>
+        </header>
+        
+        <main class="ms-Grid" dir="ltr">
+            <div class="ms-Grid-row">
+                <div class="ms-Grid-col ms-sm12">
+                    <div class="section">
+                        <h2 class="ms-font-l">Getting Started</h2>
+                        <p>
+                            FDA Oncology Copilot helps you generate FDA-style executive summaries for oncology documents.
+                            This add-in uses Retrieval-Augmented Generation (RAG) to create summaries that follow FDA regulatory language conventions.
+                        </p>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">How to Use</h2>
+                        <h3 class="ms-font-m">Method 1: Summarize Selected Text</h3>
+                        <ol>
+                            <li>Select text in your Word document that you want to summarize</li>
+                            <li>Open the FDA Oncology Copilot add-in from the Insert tab</li>
+                            <li>Select a data source from the dropdown menu</li>
+                            <li>Apply filters if needed (disease type, trial phase, document section)</li>
+                            <li>Click "Summarize Selected Text"</li>
+                            <li>Review the generated summary and reference documents</li>
+                            <li>Click "Insert Summary into Document" to add the summary to your document</li>
+                        </ol>
+                        
+                        <h3 class="ms-font-m">Method 2: Upload a Document</h3>
+                        <ol>
+                            <li>Open the FDA Oncology Copilot add-in from the Insert tab</li>
+                            <li>Select a data source from the dropdown menu</li>
+                            <li>Scroll down to the "Upload a Document" section</li>
+                            <li>Click "Choose File" and select a document from your computer</li>
+                            <li>Click "Upload and Process"</li>
+                            <li>The extracted text will be automatically inserted at your cursor position</li>
+                            <li>You can then select this text and use Method 1 to summarize it</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">Data Sources and Filters</h2>
+                        <p>
+                            <strong>Data Source:</strong> Select the knowledge base to use for generating summaries.
+                            Different sources may contain different types of FDA documents.
+                        </p>
+                        <p>
+                            <strong>Disease Type:</strong> Filter reference documents by disease type (e.g., NSCLC, breast cancer).
+                        </p>
+                        <p>
+                            <strong>Trial Phase:</strong> Filter reference documents by clinical trial phase (e.g., Phase 1, Phase 3).
+                        </p>
+                        <p>
+                            <strong>Document Section:</strong> Filter reference documents by document section (e.g., efficacy, safety).
+                        </p>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">Supported File Formats</h2>
+                        <p>
+                            The add-in supports uploading and processing various file formats, including:
+                        </p>
+                        <ul>
+                            <li><strong>Text formats:</strong> .txt</li>
+                            <li><strong>Office documents:</strong> .docx, .pdf</li>
+                            <li><strong>Spreadsheets:</strong> .csv, .xlsx</li>
+                            <li><strong>Web formats:</strong> .html, .xml, .json</li>
+                            <li><strong>Markdown:</strong> .md</li>
+                        </ul>
+                        <p>
+                            When you upload a file, the add-in extracts the text content and inserts it into your document.
+                            You can then select this text and generate a summary using the standard summarization process.
+                        </p>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">Troubleshooting</h2>
+                        <ul>
+                            <li><strong>No data sources available:</strong> Make sure the backend service is running and vector indices are built.</li>
+                            <li><strong>Error generating summary:</strong> Check that your OpenAI API key is valid and has sufficient credits.</li>
+                            <li><strong>Add-in not responding:</strong> Try refreshing the add-in or restarting Word.</li>
+                            <li><strong>Text not selected:</strong> Make sure you've selected text in your document before clicking "Summarize".</li>
+                            <li><strong>File upload errors:</strong> Ensure your file is in a supported format and is not corrupted.</li>
+                            <li><strong>Large files:</strong> Very large files may take longer to process or may be too large for the system.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="ms-font-l">About</h2>
+                        <p>
+                            FDA Oncology Copilot is designed to help regulatory writers and medical professionals create
+                            FDA-style executive summaries for oncology documents. It uses advanced AI techniques to ensure
+                            summaries maintain precise medical terminology, focus on statistical significance and clinical relevance,
+                            and follow standard FDA regulatory language conventions.
+                        </p>
+                        <p>
+                            For more information, visit the <a href="https://github.com/your-username/FDA-Doc-Copilot" target="_blank">GitHub repository</a>.
+                        </p>
+                    </div>
+                    
+                    <div class="section">
+                        <button id="backBtn" class="ms-Button ms-Button--primary" onclick="window.history.back()">
+                            <span class="ms-Button-label">Back to Add-in</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
